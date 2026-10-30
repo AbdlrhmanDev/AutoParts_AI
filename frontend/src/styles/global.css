@@ -1,0 +1,24 @@
+html,body{margin:0;background:#0B0F14;color-scheme:dark;}
+::placeholder{color:#5C6878}
+::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-thumb{background:#222B37;border-radius:10px;border:2px solid #0B0F14}::-webkit-scrollbar-track{background:transparent}
+*{box-sizing:border-box}
+a{color:#FB923C;text-decoration:none}
+a:hover{color:#FDBA74;text-decoration:underline}
+textarea,input,button{font-family:inherit}
+button{transition:background-color .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease}
+button:disabled{cursor:not-allowed !important}
+input:focus,textarea:focus{outline:none;border-color:#F97316 !important;box-shadow:0 0 0 3px rgba(249,115,22,0.18)}
+.lift{transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease}
+.lift:hover{transform:translateY(-3px);border-color:#334050 !important;box-shadow:0 18px 40px -20px rgba(0,0,0,0.9)}
+@keyframes wfDash{to{stroke-dashoffset:-24}}
+@keyframes wfPulse{0%,100%{box-shadow:0 0 0 0 rgba(34,211,238,0.35)}50%{box-shadow:0 0 0 7px rgba(34,211,238,0)}}
+@keyframes dialogFade{from{opacity:0}to{opacity:1}}
+@keyframes dialogPop{from{opacity:0;transform:translateY(10px) scale(.975)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important}}
+@media print{
+  body *{visibility:hidden !important}
+  #quote-sheet,#quote-sheet *{visibility:visible !important}
+  #quote-sheet{position:absolute;top:0;left:0;right:0;margin:0 !important;box-shadow:none !important;border:none !important;width:100% !important;overflow:hidden !important}
+  #quote-sheet a{color:#5E3A20 !important;text-decoration:underline !important}
+  @page{size:A4;margin:12mm}
+}

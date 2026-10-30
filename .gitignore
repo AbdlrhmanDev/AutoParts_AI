@@ -1,0 +1,16 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+coverage/
+*.log
+.DS_Store
+
+# Local AI/editor tooling; not part of the interview deliverable.
+.agents/
+.claude/
+.taste-skill/
+.codex/
+skills-lock.json

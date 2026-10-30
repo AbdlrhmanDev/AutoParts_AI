@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: autoparts-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: autoparts
+      # Development default; set POSTGRES_PASSWORD for any shared or production host.
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-autoparts}
+      POSTGRES_DB: autoparts
+    ports:
+      # Loopback only: the database is never reachable from the network.
+      - "127.0.0.1:5442:5432"
+    volumes:
+      - autoparts-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U autoparts -d autoparts"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  autoparts-data:
